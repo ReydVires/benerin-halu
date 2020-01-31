@@ -15,15 +15,43 @@ public class Movements : MonoBehaviour
     Rigidbody2D myRigidBody;
     public float dirThreshold = 50f;
     float posY = 0f;
+
+    public GameObject spawnPoint;
+    private Transform[] _spawnPoint;
+
     /*Collider2D myCollider;
     BoxCollider2D myBoxCollider;*/
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        facing = ChangeDirection();
-        accel = Random.Range(minAccel, maxAccel);
+        
+        _spawnPoint = new Transform[spawnPoint.transform.childCount];
+        int i = 0;
+        foreach (Transform child in spawnPoint.transform)
+        {
+            _spawnPoint[i++] = child;
+        }
+
+        Initialize();
+        
         /*myCollider = GetComponent<Collider2D>();
         myBoxCollider = GetComponent<BoxCollider2D>();*/
+    }
+
+    public void Initialize()
+    {
+        gameObject.active = true;
+        accel = Random.Range(minAccel, maxAccel);
+        int idx = Random.RandomRange(0, _spawnPoint.Length);
+        if(idx < 2)
+        {
+            facing = 1;
+        }
+        else
+        {
+            facing = -1;
+        }
+        transform.position = _spawnPoint[idx].position + Vector3.up * Random.Range(-1f,1f);
     }
 
     // Update is called once per frame
@@ -43,7 +71,6 @@ public class Movements : MonoBehaviour
         if (dirThreshold < 0)
         {
             facing = ChangeDirection();
-            Debug.Log(facing);
             dirThreshold = Random.Range(minTreshold, maxThreshold);
             accel = Random.Range(minAccel, maxAccel);
         }
@@ -53,12 +80,26 @@ public class Movements : MonoBehaviour
         return Mathf.Round(Random.Range(-1, 2));
         
     }
+
     /*bool isFacingRight()
     {
         return facing < 0;
     }*/
-    private void OnBecameInvisible()
+
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        Debug.Log("B");
+        if (collision.gameObject.tag == "SafeZone")
+        {
+            DummyScript.deadEntity.Enqueue(gameObject);
+            gameObject.active = false;
+        }
     }
+
+    private void OnMouseDown()
+    {
+        Debug.Log("Lebih Cinta Koding");
+    }
+
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1872205881869624916}
   - component: {fileID: 1872205881869624917}
   - component: {fileID: 1872205881869624874}
+  - component: {fileID: 4060281319234155779}
   m_Layer: 0
   m_Name: Entity
   m_TagString: Untagged
@@ -68,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   dirThreshold: 200
+  spawnPoint: {fileID: 4657492268896746444, guid: bf7dd0c9cbef8b44f83a9530acc22b76,
+    type: 3}
 --- !u!212 &1872205881869624874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -118,3 +121,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &4060281319234155779
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872205881869624875}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.16, y: 0.16}
+  m_Direction: 0
