@@ -19,8 +19,6 @@ public class Movements : MonoBehaviour
     public GameObject spawnPoint;
     private Transform[] _spawnPoint;
 
-    /*Collider2D myCollider;
-    BoxCollider2D myBoxCollider;*/
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -34,8 +32,6 @@ public class Movements : MonoBehaviour
 
         Initialize();
         
-        /*myCollider = GetComponent<Collider2D>();
-        myBoxCollider = GetComponent<BoxCollider2D>();*/
     }
 
     public void Initialize()
@@ -57,14 +53,6 @@ public class Movements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (isFacingRight())
-        {
-            myRigidBody.velocity = new Vector2(moveSpeed, 0f);
-        }
-        else
-        {
-            myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
-        }*/
         
         myRigidBody.velocity = new Vector2(facing * moveSpeed * accel, 0f);
         dirThreshold -= Time.deltaTime * 30;
@@ -81,15 +69,8 @@ public class Movements : MonoBehaviour
         
     }
 
-    /*bool isFacingRight()
-    {
-        return facing < 0;
-    }*/
-
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("B");
         if (collision.gameObject.tag == "SafeZone")
         {
             DummyScript.deadEntity.Enqueue(gameObject);
@@ -97,9 +78,6 @@ public class Movements : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-        Debug.Log("Lebih Cinta Koding");
-    }
+    
 
 }
