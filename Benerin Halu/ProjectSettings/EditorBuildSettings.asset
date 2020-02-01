@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Movement.unity
     guid: 935d20bb0839d7146a9890e1011bd7f2
   - enabled: 1
-    path: Assets/Scenes/Popup.unity
+    path: Assets/Scenes/Popup 1.unity
     guid: 91e0460620344514fa30d3bb22d7177b
   m_configObjects: {}
