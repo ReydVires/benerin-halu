@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1872205881869624917}
   - component: {fileID: 1872205881869624874}
   - component: {fileID: 4060281319234155779}
+  - component: {fileID: -2334015821347824833}
+  - component: {fileID: -2901948681019524674}
   m_Layer: 0
   m_Name: Entity
   m_TagString: Untagged
@@ -137,3 +139,37 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.16, y: 0.16}
   m_Direction: 0
+--- !u!114 &-2334015821347824833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872205881869624875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcc2348efc5335459a13daccc966530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  sanityMeter: 100
+  facingRight: 1
+--- !u!95 &-2901948681019524674
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872205881869624875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
