@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: e3392570eb6a8e4428b43249eaf7387f
+guid: 2e8b714b1e48615498500d0847d6e492
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4417439095618549469
-    second: btnSpriteAlter1_0
-  - first:
-      213: 865638952273766184
-    second: btnSpriteAlter1_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -90,49 +84,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: btnSpriteAlter1_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 34
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd6344fe375ed4d30800000000000000
-      internalID: 4417439095618549469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: btnSpriteAlter1_1
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 1
-        width: 34
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 827e40e6a0e530c00800000000000000
-      internalID: 865638952273766184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

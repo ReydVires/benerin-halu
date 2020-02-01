@@ -6,33 +6,48 @@ public class DummyScript : MonoBehaviour
 {
     public static Queue<GameObject> deadEntity = new Queue<GameObject>();
     public float timeNewEntitiy = 5;
+    public float timeSpawnDifficulity; // untuk mempercepat spawn jika waktu permainan sudah berlangsung cukup lama [OPTIONAL]
     public GameObject player;
 
     public RuntimeAnimatorController[] animatorControllers;
+    public Transform[] spawnSpot;
 
     private void Start()
     {
-        deadEntity.Enqueue(player);
+        for (int i = 0; i < 17; i++)
+        {
+            if (player.transform.GetChild(i).gameObject.activeSelf != true)
+            {
+                deadEntity.Enqueue(player.transform.GetChild(i).gameObject);
+            }
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            InitPeople();
+        }
     }
-
-    public Transform[] spawnIdx;
-
     private void Update()
     {
         if(deadEntity.Count > 0)
         {
             timeNewEntitiy -= Time.deltaTime;
-            if(timeNewEntitiy <= 0)
+            if (timeNewEntitiy <= 0)
             {
-                timeNewEntitiy = 3f;
-                int idx = Random.Range(0, spawnIdx.Length);
-                float facing = -1;
-                if(idx < 2)
-                {
-                    facing = 1;
-                }
-                deadEntity.Dequeue().GetComponent<Movements>().Initialize( facing,spawnIdx[idx].position);
+                timeNewEntitiy = 3f; // nanti bisa diganti dengan timeSpawnDifficulity [OPTIONAL]
+                InitPeople();
             }
         }
+    }
+
+    public void InitPeople()
+    {
+        int idx = Random.Range(0, spawnSpot.Length);
+        float facing = -1;
+        if (idx < 2)
+        {
+            facing = 1;
+        }
+        int idxAnim = Random.Range(0, animatorControllers.Length);
+        deadEntity.Dequeue().GetComponent<Movements>().Initialize(facing, spawnSpot[idx].position, animatorControllers[idxAnim]);
     }
 }
