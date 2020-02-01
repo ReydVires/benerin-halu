@@ -1291,7 +1291,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Programmer : \n\tMuh. Haydar\n\tA. Arsyel\n\tAnas\n\nDesigner :\n\tDede
     Mastra\n\nArts : \n\tWitsqadianto\n\tImanda S.\n\nSound Engineer :\n\tImanda
-    S\n\nCredit to:\n\tOtologic\n\tVexedEnigma\n\nPowered by :\n\tUnity\n\tGGJ 2020\n\n\n"
+    S.\n\nCredit to:\n\tOtologic\n\tVexedEnigma\n\nPowered by :\n\tUnity\n\tGGJ 2020\n\n\n"
 --- !u!222 &1832680049
 CanvasRenderer:
   m_ObjectHideFlags: 0
