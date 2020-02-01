@@ -15,7 +15,7 @@ public class DummyScript : MonoBehaviour
             if(timeNewEntitiy <= 0)
             {
                 timeNewEntitiy = 3f;
-                deadEntity.Dequeue().GetComponent<Movements>().Initialize();
+                //deadEntity.Dequeue().GetComponent<Movements>().Initialize();
             }
         }
     }

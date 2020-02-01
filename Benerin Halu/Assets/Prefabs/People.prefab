@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1092768110562512326}
   - component: {fileID: 1092768110562512320}
   - component: {fileID: 7199495205933033373}
+  - component: {fileID: 2726789129126149525}
+  - component: {fileID: 5091963711978837487}
   m_Layer: 0
   m_Name: People
   m_TagString: Untagged
@@ -78,9 +80,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcc2348efc5335459a13daccc966530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   sanityMeter: 0
-  facingRight: 1
+  movements: {fileID: 2726789129126149525}
+--- !u!114 &2726789129126149525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092768110562512321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588e5ebe913fa24eb6c547d41725013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  facing: -1
+--- !u!70 &5091963711978837487
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092768110562512321}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.12044603}
+  m_Size: {x: 0.1, y: 0.25910795}
+  m_Direction: 0
 --- !u!1 &1092768111946633854
 GameObject:
   m_ObjectHideFlags: 0
