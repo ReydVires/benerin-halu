@@ -18,6 +18,12 @@ public class HaluMeter : MonoBehaviour
     [SerializeField]
     private float _maxHalu;
 
+    public Text textTime;
+    private float _timePlay;
+
+    public Text textScore;
+    private float _score;
+
     private Color[] indicators ={new Color(0,255,0,255), new Color(236, 255, 0, 255), new Color(255, 0, 0, 255) };
 
     private void Awake()
@@ -27,15 +33,20 @@ public class HaluMeter : MonoBehaviour
 
     void Start()
     {
+        _score = 0;
+        _timePlay = 0;
         _value = 0;
         _haluMeter.value = 0;
         _haluMeter.maxValue = _maxHalu;
         _timeHalu = timeHalu;
+        addingScore(0);
     }
 
     void Update()
     {
         _timeHalu -= Time.deltaTime;
+        _timePlay += Time.deltaTime;
+        SetTimeText(Mathf.RoundToInt(_timePlay));
         if(_timeHalu <= 0)
         {
             _timeHalu = timeHalu;
@@ -67,5 +78,16 @@ public class HaluMeter : MonoBehaviour
     public static void AddingHaluMeter(float halu)
     {
         sanityPeople.Enqueue(halu);
+    }
+
+    public void addingScore(int point)
+    {
+        _score += point;
+        textScore.text = _score.ToString();
+    }
+
+    void SetTimeText(int time)
+    {
+        textTime.text = string.Format("{0:00} : {1:00}", time / 60, time % 60);
     }
 }

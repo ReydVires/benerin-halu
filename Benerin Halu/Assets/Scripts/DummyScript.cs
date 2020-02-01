@@ -8,6 +8,8 @@ public class DummyScript : MonoBehaviour
     public float timeNewEntitiy = 5;
     public GameObject player;
 
+    public RuntimeAnimatorController[] animatorControllers;
+
     private void Start()
     {
         deadEntity.Enqueue(player);

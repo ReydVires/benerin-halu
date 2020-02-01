@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class People : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class People : MonoBehaviour
     public int sanityMeter;
     public Movements movements;
     Animator anim;
-    
+
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -23,6 +24,7 @@ public class People : MonoBehaviour
         
         movements.move(speed);
         anim.SetFloat("XPos", movements.facing);
+        
     }
 
     private void OnMouseDown()
