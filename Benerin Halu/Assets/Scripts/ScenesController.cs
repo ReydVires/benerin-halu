@@ -9,21 +9,18 @@ public class ScenesController : MonoBehaviour
 
     public void popUp()
     {
-        if (!EntitasDetail.inspectPopUp2)
-        {
-            EntitasDetail.inspectPopUp = true;
-            Time.timeScale = 0.1f;
-            SceneManager.LoadScene("Popup 1", LoadSceneMode.Additive);
-        }
+        EntitasDetail.inspectPopUp = true;
+        Time.timeScale = 0.01f;
+        SceneManager.LoadScene("Popup 1", LoadSceneMode.Additive);
     }
     public void popPopUp()
     {
-        EntitasDetail.inspectPopUp2 = true;
+        EntitasDetail.inspectPopUp = true;
         SceneManager.LoadScene("Popup 2", LoadSceneMode.Additive);
     }
     public void unPopPopUp()
     {
-        EntitasDetail.inspectPopUp2 = false;
+        EntitasDetail.inspectPopUp = false;
         SceneManager.UnloadScene("Popup 2");
     }
     public void unPopUp()
