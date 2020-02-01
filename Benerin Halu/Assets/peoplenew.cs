@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class People : MonoBehaviour, IMoveable
+public class peoplenew : MonoBehaviour, IMoveable
 {
     public float speed;
     public int sanityMeter;
