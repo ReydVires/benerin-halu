@@ -1,10 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 979feefb5b82c1748b3050285af76311
-TextureImporter:
-  internalIDToNameTable: []
-=======
-guid: fac24e82565491642900fb29c0ccb7e9
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -13,7 +8,6 @@ TextureImporter:
   - first:
       213: 5804648274834975401
     second: btnSprite_1
->>>>>>> 19babd559ca99ba291f83448f61db0581622179c
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -43,11 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 19babd559ca99ba291f83448f61db0581622179c
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -56,11 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
-  spriteMode: 1
-=======
   spriteMode: 2
->>>>>>> 19babd559ca99ba291f83448f61db0581622179c
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -83,9 +69,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -99,7 +82,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> 19babd559ca99ba291f83448f61db0581622179c
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,9 +90,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
-    sprites: []
-=======
     sprites:
     - serializedVersion: 2
       name: btnSprite_0
@@ -154,7 +133,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
->>>>>>> 19babd559ca99ba291f83448f61db0581622179c
     outline: []
     physicsShape: []
     bones: []
