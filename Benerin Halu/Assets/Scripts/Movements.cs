@@ -29,7 +29,6 @@ public class Movements : MonoBehaviour
 
     public void move(float speed)
     {
-        
         myRigidBody.velocity = new Vector2(facing * speed * accel, 0f);
         dirThreshold -= Time.deltaTime * 20;
         if (dirThreshold < 0)
