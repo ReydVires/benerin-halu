@@ -14,7 +14,6 @@ public class Movements : MonoBehaviour
     float maxThreshold = 100f;
     Rigidbody2D myRigidBody;
     public float dirThreshold = 50f;
-    float posY = 0f;
 
     public GameObject spawnPoint;
     private Transform[] _spawnPoint;
@@ -36,9 +35,9 @@ public class Movements : MonoBehaviour
 
     public void Initialize()
     {
-        gameObject.active = true;
+        gameObject.SetActive(true);
         accel = Random.Range(minAccel, maxAccel);
-        int idx = Random.RandomRange(0, _spawnPoint.Length);
+        int idx = Random.Range(0, _spawnPoint.Length-1);
         if(idx < 2)
         {
             facing = 1;
@@ -74,7 +73,8 @@ public class Movements : MonoBehaviour
         if (collision.gameObject.tag == "SafeZone")
         {
             DummyScript.deadEntity.Enqueue(gameObject);
-            gameObject.active = false;
+            gameObject.SetActive(false);
+            // gameObject.active = false;
         }
     }
 
