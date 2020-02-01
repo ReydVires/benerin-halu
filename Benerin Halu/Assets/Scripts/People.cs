@@ -2,43 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class People : MonoBehaviour, IMoveable
+public class People : MonoBehaviour
 {
+    public string nama;
     public float speed;
     public int sanityMeter;
-    public bool facingRight = true;
-    Rigidbody2D rb2d;
+    public Movements movements;
     Animator anim;
     
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        initFacing();
         sanityMeter = Random.Range(1, 4);
     }
 
-    void initFacing()
-    {
-        if (facingRight)
-        {
-            anim.SetFloat("XPos", 1.0f);
-        }
-        else
-        {
-            anim.SetFloat("XPos", -1.0f);
-        }
-    }
 
     void Update()
     {
+        //Debug.Log(movements.facing);
         
+        movements.move(speed);
+        anim.SetFloat("XPos", movements.facing);
     }
 
-    public void Move()
+    private void OnMouseDown()
     {
-        
+        if (!EntitasDetail.inspectPopUp)
+        {
+            EntitasDetail.title = nama;
+            FindObjectOfType<ScenesController>().popUp();
+        }
     }
-
-    
 }

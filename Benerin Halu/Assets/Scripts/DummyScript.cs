@@ -6,6 +6,14 @@ public class DummyScript : MonoBehaviour
 {
     public static Queue<GameObject> deadEntity = new Queue<GameObject>();
     public float timeNewEntitiy = 5;
+    public GameObject player;
+
+    private void Start()
+    {
+        deadEntity.Enqueue(player);
+    }
+
+    public Transform[] spawnIdx;
 
     private void Update()
     {
@@ -15,7 +23,13 @@ public class DummyScript : MonoBehaviour
             if(timeNewEntitiy <= 0)
             {
                 timeNewEntitiy = 3f;
-                deadEntity.Dequeue().GetComponent<Movements>().Initialize();
+                int idx = Random.Range(0, spawnIdx.Length);
+                float facing = -1;
+                if(idx < 2)
+                {
+                    facing = 1;
+                }
+                deadEntity.Dequeue().GetComponent<Movements>().Initialize( facing,spawnIdx[idx].position);
             }
         }
     }

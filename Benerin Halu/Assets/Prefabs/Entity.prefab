@@ -69,10 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3588e5ebe913fa24eb6c547d41725013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  dirThreshold: 200
-  spawnPoint: {fileID: 4657492268896746444, guid: bf7dd0c9cbef8b44f83a9530acc22b76,
-    type: 3}
+  facing: 1
 --- !u!212 &1872205881869624874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -153,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   sanityMeter: 100
-  facingRight: 1
+  movements: {fileID: 1872205881869624917}
 --- !u!95 &-2901948681019524674
 Animator:
   serializedVersion: 3

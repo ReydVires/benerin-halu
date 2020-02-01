@@ -12,7 +12,7 @@ public class PopUp : MonoBehaviour
     {
         
         text = GetComponent<Text>();
-        text.text = EntitasDetail.random;
+        text.text = EntitasDetail.title;
     }
 
     // Update is called once per frame
