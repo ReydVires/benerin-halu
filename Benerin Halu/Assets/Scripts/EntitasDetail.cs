@@ -4,6 +4,6 @@ using UnityEngine;
 
 public static class EntitasDetail
 {
-    public static string random = "";
+    public static string title = "";
     public static bool inspectPopUp = false;
 }

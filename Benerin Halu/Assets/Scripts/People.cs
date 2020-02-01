@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class People : MonoBehaviour, IMoveable
+public class People : MonoBehaviour
 {
+    public string nama;
     public float speed;
     public int sanityMeter;
     public Movements movements;
@@ -24,14 +25,12 @@ public class People : MonoBehaviour, IMoveable
         anim.SetFloat("XPos", movements.facing);
     }
 
-    public void Move()
-    {
-        
-    }
-
     private void OnMouseDown()
     {
-        Debug.Log("A");
-        HaluMeter.AddingHaluMeter(5);
+        if (!EntitasDetail.inspectPopUp)
+        {
+            EntitasDetail.title = nama;
+            FindObjectOfType<ScenesController>().popUp();
+        }
     }
 }

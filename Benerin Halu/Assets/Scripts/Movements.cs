@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movements : MonoBehaviour
 {
-
+    float random = 0;
     public float facing = 1f;
     float accel = 1f;
     float minAccel = 1f;
@@ -24,7 +24,7 @@ public class Movements : MonoBehaviour
         gameObject.SetActive(true);
         accel = Random.Range(minAccel, maxAccel);
         this.facing = facing;
-        transform.position = position + Vector3.up * Random.Range(-1f,1f);
+        transform.position = position + Vector3.up * Random.Range(-0.15f,0.15f);
     }
 
     public void move(float speed)
@@ -50,14 +50,6 @@ public class Movements : MonoBehaviour
         {
             DummyScript.deadEntity.Enqueue(gameObject);
             gameObject.SetActive(false);
-        }
-    }
-    private void OnMouseDown()
-    {
-        if (!EntitasDetail.inspectPopUp)
-        {
-            EntitasDetail.random = random.ToString();
-            FindObjectOfType<ScenesController>().popUp();
         }
     }
 
