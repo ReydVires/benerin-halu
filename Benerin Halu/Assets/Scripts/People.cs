@@ -39,8 +39,5 @@ public class People : MonoBehaviour, IMoveable
         
     }
 
-    private void OnMouseDown()
-    {
-        HaluMeter.AddingHaluMeter(5);
-    }
+    
 }

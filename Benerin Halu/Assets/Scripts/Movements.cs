@@ -14,6 +14,7 @@ public class Movements : MonoBehaviour
     float maxThreshold = 100f;
     Rigidbody2D myRigidBody;
     public float dirThreshold = 50f;
+    public int random;
 
     public GameObject spawnPoint;
     private Transform[] _spawnPoint;
@@ -21,7 +22,7 @@ public class Movements : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        
+        random = Random.Range(1, 1000);
         _spawnPoint = new Transform[spawnPoint.transform.childCount];
         int i = 0;
         foreach (Transform child in spawnPoint.transform)
@@ -77,7 +78,13 @@ public class Movements : MonoBehaviour
             // gameObject.active = false;
         }
     }
-
-    
+    private void OnMouseDown()
+    {
+        if (!EntitasDetail.inspectPopUp)
+        {
+            EntitasDetail.random = random.ToString();
+            FindObjectOfType<ScenesController>().popUp();
+        }
+    }
 
 }
