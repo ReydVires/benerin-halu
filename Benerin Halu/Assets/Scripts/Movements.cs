@@ -52,5 +52,13 @@ public class Movements : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    private void OnMouseDown()
+    {
+        if (!EntitasDetail.inspectPopUp)
+        {
+            EntitasDetail.random = random.ToString();
+            FindObjectOfType<ScenesController>().popUp();
+        }
+    }
 
 }
