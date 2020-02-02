@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class PopUp : MonoBehaviour
 {
-    //public Text text;
     public Sprite potrait;
     public GameObject panelImage;
     public GameObject peopleObject;
     private People _people;
-    // Start is called before the first frame update
+
     void Start()
     {
         
@@ -20,24 +19,28 @@ public class PopUp : MonoBehaviour
         panelImage.GetComponent<Image>().sprite = potrait;
         peopleObject = EntitasDetail.go;
         _people = peopleObject.GetComponent<People>();
-        if (peopleObject == null)
-        {
-            Debug.Log("debug log");
-        }
     }
 
     public void rehabilitate()
     {
-        if (_people.sanityMeter >= 11)
+        var isRehabilitated = _people.sanityMeter >= 11;
+        if (isRehabilitated)
         {
             HaluMeter.AddingHaluMeter(-15);
-            _people.BackToPoll();
+            //DelayAddHaluMeter(0.5f, -15);
         }
         else
         {
             HaluMeter.AddingHaluMeter(5);
+            //DelayAddHaluMeter(0.5f, 5);
         }
+        _people.RehabilityFeedback(isRehabilitated);
     }
-    // Update is called once per frame
-        
+
+    //IEnumerator DelayAddHaluMeter(float sec, int value)
+    //{
+    //    yield return new WaitForSeconds(sec);
+    //    HaluMeter.AddingHaluMeter(value);
+    //}
+
 }

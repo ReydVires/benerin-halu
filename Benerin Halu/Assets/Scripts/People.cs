@@ -16,6 +16,8 @@ public class People : MonoBehaviour
     public GameObject baloonPrefab;
     public GameObject baloonSelf;
     public float baloonTransDelay;
+    private Animator animEff;
+    private GameObject animEffObj;
     float baloonDelayChange;
     // IList<GameObject> baloons;
     int pickedEmojisIdx;
@@ -24,7 +26,7 @@ public class People : MonoBehaviour
     public Sprite potrait;
     string[] emojis = { "Sad", "GJ", "Angry", "Heart", "Tai", "Sleepy", "Suicide" };
     IList<string> pickedEmojis;
-
+    bool _canMove;
     public AudioClip emoji;
 
     void Start()
@@ -36,6 +38,10 @@ public class People : MonoBehaviour
         InitBaloonState();
         anim = GetComponentInChildren<Animator>();
         baloonDelayChange = baloonTransDelay;
+        animEffObj = gameObject.transform.GetChild(2).gameObject;
+        animEff = animEffObj.GetComponent<Animator>();
+        Debug.Assert(animEff != null);
+        _canMove = true;
     }
 
     void DefineEmoji()
@@ -63,10 +69,10 @@ public class People : MonoBehaviour
         baloonSelf = Instantiate(baloonPrefab, baloonTransform);
         DefineEmoji();
 
-        baloonSelf.active = false;
+        baloonSelf.SetActive(false);
         if (pickedEmojis.Count >= 1)
         {
-            baloonSelf.active= true;
+            baloonSelf.SetActive(true);
             pickedEmojisIdx = 0;
             baloonSelf.GetComponent<Baloon>().SetSprite(pickedEmojis[pickedEmojisIdx]);
         }
@@ -87,10 +93,14 @@ public class People : MonoBehaviour
         }
 
         // movement
-        if (movements != null)
+        if (movements != null && _canMove)
         {
             movements.Move(speed);
             anim.SetFloat("XPos", movements.facing);
+        }
+        else
+        {
+            movements.Move(0);
         }
         levelDown();
         HaluPeople();
@@ -171,7 +181,7 @@ public class People : MonoBehaviour
             sanityMeter += 1;
             if (sanityMeter == 5 || sanityMeter == 7 || sanityMeter == 9)
             {
-                baloonSelf.active = true;
+                baloonSelf.SetActive(true);
                 emojiMeter += 2;
                 while (pickedEmojis.Count != emojiMeter)
                 {
@@ -198,6 +208,34 @@ public class People : MonoBehaviour
     public void BackToPoll()
     {
         DummyScript.deadEntity.Enqueue(gameObject);
+        _canMove = true;
+        animEffObj.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    IEnumerator DelayRehabilityEffect(float second, bool isBackToPool)
+    {
+        yield return new WaitForSeconds(second);
+        animEffObj.SetActive(false);
+        if (isBackToPool)
+        {
+            BackToPoll();
+        }
+    }
+
+    public void RehabilityFeedback(bool isPositive)
+    {
+        Debug.Log("1 second passed");
+        animEffObj.SetActive(true);
+        if (isPositive)
+        {
+            _canMove = false;
+            animEff.SetFloat("feedback", 1f);
+        }
+        else
+        {
+            animEff.SetFloat("feedback", 0f);
+        }
+        StartCoroutine(DelayRehabilityEffect(0.7f, isPositive));
     }
 }
