@@ -19,6 +19,7 @@ public class People : MonoBehaviour
     IList<int> hasShowBaloonIndexs;
     Animator anim;
     public Sprite potrait;
+    public string message;
     string[] emojis = { "Sad", "GJ", "Angry", "Heart", "Tai", "Sleepy", "Suicide" };
     IList<string> pickedEmojis;
 
@@ -130,8 +131,9 @@ public class People : MonoBehaviour
         {
             EntitasDetail.title = nama;
             EntitasDetail.potrait = potrait;
+            EntitasDetail.message = message ;
             FindObjectOfType<ScenesController>().popUp();
-
+            
         }
     }
 

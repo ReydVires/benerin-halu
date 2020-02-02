@@ -13,13 +13,14 @@ public class Movements : MonoBehaviour
     float maxThreshold = 50f;
     Rigidbody2D myRigidBody;
     float dirThreshold = 50f;
+    string message;
 
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    public void Initialize(float facing, Vector3 position, RuntimeAnimatorController animator, Sprite potraits)
+    public void Initialize(float facing, Vector3 position, RuntimeAnimatorController animator, Sprite potraits, string message)
     {
         gameObject.SetActive(true);
         accel = Random.Range(minAccel, maxAccel);
@@ -27,6 +28,7 @@ public class Movements : MonoBehaviour
         transform.position = position + Vector3.up * Random.Range(-0.15f,0.15f);
         gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController = animator;
         gameObject.GetComponent<People>().potrait = potraits;
+        gameObject.GetComponent<People>().message = message;
     }
 
     public void Move(float speed)
