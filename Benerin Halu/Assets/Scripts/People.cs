@@ -7,21 +7,27 @@ public class People : MonoBehaviour
 {
     public string nama;
     public float speed;
-    public int sanityMeter; // Max is 10
+    public int emojiMeter; // Max is 7
+    public int sanityMeter;
     public Movements movements;
     public GameObject baloonPrefab;
+    public GameObject baloonSelf;
     public float baloonTransDelay;
-    int prevBaloonIdx = -1;
     float baloonDelayChange;
-    IList<GameObject> baloons;
+    // IList<GameObject> baloons;
+    int pickedEmojisIdx;
     IList<int> hasShowBaloonIndexs;
     Animator anim;
+    public Sprite potrait;
     string[] emojis = { "Sad", "GJ", "Angry", "Heart", "Tai", "Sleepy", "Suicide" };
-    IList<string> pickEmojis;
+    IList<string> pickedEmojis;
+
+    public AudioClip emoji;
 
     void Start()
     {
-        sanityMeter = Random.Range(0, 6);
+        emojiMeter = Random.Range(0, 6);
+        pickedEmojis = new List<string>(); // di sini karena define emoji bakal dipanggil saat emoticon bertambah
         InitBaloonState();
         anim = GetComponentInChildren<Animator>();
         baloonDelayChange = baloonTransDelay;
@@ -29,32 +35,45 @@ public class People : MonoBehaviour
 
     void DefineEmoji()
     {
-        pickEmojis = new List<string>();
-        for (var i = 0; i < sanityMeter; i++)
+        Debug.Log(pickedEmojis.Count);
+        while (pickedEmojis.Count != emojiMeter)
         {
-
+            var pickEmo = Random.Range(0, emojis.Length - 1);
+            if (!pickedEmojis.Contains(emojis[pickEmo]))
+                pickedEmojis.Add(emojis[pickEmo]);
+        }
+        for (int i = 0; i < pickedEmojis.Count; i++)
+        {
+            Debug.Log(pickedEmojis[i] + " " + i);
         }
     }
-
+    
     void InitBaloonState()
     {
-        baloons = new List<GameObject>();
-        hasShowBaloonIndexs = new List<int>();
-        Debug.Log(name + ": " + sanityMeter);
-        for (var i = 0; i < sanityMeter; i++)
+        /*
+        for (var i = 0; i < emojiMeter; i++)
         {
-            // Get second child of people prefabs
-            var baloonTransform = gameObject.transform.GetChild(1).transform;
-            var baloonObject = Instantiate(baloonPrefab, baloonTransform);
-            baloonObject.GetComponent<Baloon>().SetSprite(emojis[i]); // Set Emoji sprite
-            baloonObject.SetActive(false);
             hasShowBaloonIndexs.Add(i);
-            baloons.Add(baloonObject);
         }
-    }
+        */
 
+        var baloonTransform = gameObject.transform.GetChild(1).transform;
+        baloonSelf = Instantiate(baloonPrefab, baloonTransform);
+        DefineEmoji();
+
+
+        if (pickedEmojis.Count >= 1)
+        {
+            pickedEmojisIdx = 0;
+            baloonSelf.GetComponent<Baloon>().SetSprite(pickedEmojis[pickedEmojisIdx]);
+        }
+        
+
+    }
+    
     void Update()
     {
+        // baloon
         if (baloonDelayChange > 0)
         {
             baloonDelayChange -= Time.deltaTime * 15;
@@ -64,6 +83,7 @@ public class People : MonoBehaviour
             ChangeBaloonState();
         }
 
+        // movement
         if (movements != null)
         {
             movements.Move(speed);
@@ -71,40 +91,52 @@ public class People : MonoBehaviour
         }
     }
 
+    
     void ChangeBaloonState()
     {
-        if (hasShowBaloonIndexs.Count > 0)
-        {
-            Debug.Log("Do Change Baloon");
-            var pickBaloonIndex = Random.Range(0, hasShowBaloonIndexs.Count - 1);
-            var baloon = baloons[pickBaloonIndex];
-            baloon.SetActive(true);
-            if (prevBaloonIdx >= 0)
-            {
-                baloons[prevBaloonIdx].SetActive(false);
-            }
-            hasShowBaloonIndexs.RemoveAt(pickBaloonIndex);
-            prevBaloonIdx = pickBaloonIndex;
-            baloonDelayChange = baloonTransDelay;
-        }
-        else
+        if (pickedEmojis.Count <= 1)
+            return;
+        if (pickedEmojisIdx == pickedEmojis.Count-1)
         {
             Debug.Log("Do Reset Baloon State");
-            for (int i = 0; i < sanityMeter; i++)
+            pickedEmojisIdx = 0;
+            /*
+            for (int i = 0; i < emojiMeter; i++)
             {
                 hasShowBaloonIndexs.Add(i);
-                baloons[i].SetActive(false);
             }
-            prevBaloonIdx = -1;
+            */
         }
+        Debug.Log("Do Change Baloon");
+        baloonSelf.GetComponent<Baloon>().SetSprite(pickedEmojis[++pickedEmojisIdx]);
+
+            /*
+            // set sprite
+            var pickBaloonIndex = Random.Range(0, hasShowBaloonIndexs.Count - 1);
+            baloonSelf.GetComponent<Baloon>().SetSprite(emojis[pickBaloonIndex]);
+            hasShowBaloonIndexs.RemoveAt(pickBaloonIndex);
+            */
+
+            // delay
+        baloonDelayChange = baloonTransDelay;
+        
+        
     }
+    
 
     private void OnMouseDown()
     {
         if (!EntitasDetail.inspectPopUp)
         {
             EntitasDetail.title = nama;
+            EntitasDetail.potrait = potrait;
             FindObjectOfType<ScenesController>().popUp();
+
         }
     }
+
+    /*
+        gameObject.GetComponentInParent<AudioSource>().PlayOneShot(emoji);
+    */
+    
 }

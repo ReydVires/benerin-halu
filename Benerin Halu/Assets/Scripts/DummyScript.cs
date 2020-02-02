@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DummyScript : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DummyScript : MonoBehaviour
     public GameObject player;
 
     public RuntimeAnimatorController[] animatorControllers;
+
+    public Sprite[] potraits;
     public Transform[] spawnSpot;
 
     private void Start()
@@ -48,6 +51,6 @@ public class DummyScript : MonoBehaviour
             facing = 1;
         }
         int idxAnim = Random.Range(0, animatorControllers.Length);
-        deadEntity.Dequeue().GetComponent<Movements>().Initialize(facing, spawnSpot[idx].position, animatorControllers[idxAnim]);
+        deadEntity.Dequeue().GetComponent<Movements>().Initialize(facing, spawnSpot[idx].position, animatorControllers[idxAnim], potraits[idxAnim]);
     }
 }

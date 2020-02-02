@@ -19,13 +19,14 @@ public class Movements : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    public void Initialize(float facing, Vector3 position, RuntimeAnimatorController animator)
+    public void Initialize(float facing, Vector3 position, RuntimeAnimatorController animator, Sprite potraits)
     {
         gameObject.SetActive(true);
         accel = Random.Range(minAccel, maxAccel);
         this.facing = facing;
         transform.position = position + Vector3.up * Random.Range(-0.15f,0.15f);
         gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController = animator;
+        gameObject.GetComponent<People>().potrait = potraits;
     }
 
     public void Move(float speed)

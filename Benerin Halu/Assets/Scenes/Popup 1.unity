@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 8329328}
+  potrait: {fileID: 0}
+  panelImage: {fileID: 1683918454}
 --- !u!114 &8329328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,6 +1904,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1669031831}
+  potrait: {fileID: 0}
+  panelImage: {fileID: 1683918454}
 --- !u!1 &1683918454
 GameObject:
   m_ObjectHideFlags: 0

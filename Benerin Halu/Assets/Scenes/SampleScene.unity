@@ -260,6 +260,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &19629696
 Animator:
   serializedVersion: 3
@@ -575,6 +579,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &130225946
@@ -768,6 +778,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1001 &158496983
@@ -918,6 +934,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &172445765
@@ -976,6 +998,10 @@ MonoBehaviour:
   sanityMeter: 10
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!50 &172445768
 Rigidbody2D:
   serializedVersion: 4
@@ -1332,6 +1358,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!4 &319244689 stripped
@@ -1442,6 +1474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 388484114}
+  - component: {fileID: 388484115}
   m_Layer: 0
   m_Name: PeopleFolder
   m_TagString: Untagged
@@ -1480,6 +1513,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &388484115
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388484113}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6759652784997126371, guid: 2ff21e53d4317d845bd2ed41dd6bb93e,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.697
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &400810982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1092768110562512325, guid: 380d3e3587a2fc741afccf870b0d5557,
@@ -1857,6 +1987,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &583890310
@@ -2034,6 +2170,18 @@ MonoBehaviour:
   - {fileID: 9100000, guid: bc4ae8935b6ac8942bf01c01b234af29, type: 2}
   - {fileID: 9100000, guid: d2e7e33b6a78e78488c1c56975980825, type: 2}
   - {fileID: 9100000, guid: 0942c47e79b3ddd4aa1ceda520c90123, type: 2}
+  potraits:
+  - {fileID: 3383869037669962963, guid: e5a855008b4b4b741be5c94be31fa3d8, type: 3}
+  - {fileID: 5547906182126840004, guid: d079305a38fd0d247b24fe2a092e73f4, type: 3}
+  - {fileID: 7533687437168620141, guid: bec6356fe905a474cac99ef9da94bed4, type: 3}
+  - {fileID: -7520378635657021219, guid: 3b3f7a5a7b18ba84ca21f5fc17173d07, type: 3}
+  - {fileID: -6736448439708889228, guid: b49867e3957110543b793da667ca14e3, type: 3}
+  - {fileID: -793158190367308455, guid: 04e0bdef1c627e2448a8e6d91c97dde9, type: 3}
+  - {fileID: -1341445659824988977, guid: 21bab4ef46a68a0498933b3fd5f7c0b9, type: 3}
+  - {fileID: -977100880557368619, guid: 6f7c27e15cb407e449762faa37860888, type: 3}
+  - {fileID: 3650965463679679912, guid: 6868cd3f55c594e44a4516c4fb5afa69, type: 3}
+  - {fileID: -5758777435804537523, guid: bc512fe050c0ae94a8a3a30d69964edb, type: 3}
+  - {fileID: 6211898707711467844, guid: ba6280f4268a2c845a7e924bffdbb341, type: 3}
   spawnSpot:
   - {fileID: 464536771}
   - {fileID: 583890311}
@@ -2121,6 +2269,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &848934551
 Animator:
   serializedVersion: 3
@@ -2416,6 +2568,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &913073707
@@ -2476,6 +2634,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &913073710
 Animator:
   serializedVersion: 3
@@ -2624,6 +2786,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &962301613
 Animator:
   serializedVersion: 3
@@ -2867,6 +3033,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &1008878171
 Animator:
   serializedVersion: 3
@@ -3206,6 +3376,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1001 &1273581951
@@ -3353,6 +3529,12 @@ PrefabInstance:
     - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
         type: 3}
       propertyPath: baloonPrefab
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
@@ -3507,6 +3689,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!212 &1297887577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3872,6 +4058,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1001 &1496120461
@@ -4022,6 +4214,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1001 &1511660628
@@ -4169,6 +4367,12 @@ PrefabInstance:
     - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
         type: 3}
       propertyPath: baloonPrefab
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
@@ -4341,6 +4545,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &1599645602
 Animator:
   serializedVersion: 3
@@ -4573,6 +4781,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &1748996082
@@ -4631,6 +4845,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!50 &1748996085
 Rigidbody2D:
   serializedVersion: 4
@@ -4781,6 +4999,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &1786351622
 Animator:
   serializedVersion: 3
@@ -5013,6 +5235,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &1805254628
@@ -5193,6 +5421,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1001 &1825003228
@@ -5340,6 +5574,12 @@ PrefabInstance:
     - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
         type: 3}
       propertyPath: baloonPrefab
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
@@ -5505,6 +5745,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &1972156074
@@ -5665,6 +5911,10 @@ MonoBehaviour:
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
+  baloonSelf: {fileID: 0}
+  baloonTransDelay: 0
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!95 &2010636266
 Animator:
   serializedVersion: 3
@@ -5894,6 +6144,12 @@ PrefabInstance:
     - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
         type: 3}
       propertyPath: baloonPrefab
+      value: 
+      objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
+        type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: baloonSelf
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
