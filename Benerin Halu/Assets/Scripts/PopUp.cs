@@ -10,15 +10,22 @@ public class PopUp : MonoBehaviour
     public GameObject peopleObject;
     private People _people;
 
+    public string message;
+    // Start is called before the first frame update
     void Start()
     {
         
         //text = GetComponent<Text>();
         //text.text = EntitasDetail.title;
         potrait = EntitasDetail.potrait;
+        message = EntitasDetail.message;
         panelImage.GetComponent<Image>().sprite = potrait;
         peopleObject = EntitasDetail.go;
         _people = peopleObject.GetComponent<People>();
+        Debug.Log(message);
+        Fungus.Flowchart.BroadcastFungusMessage(message);
+        FindObjectOfType<Fungus.Flowchart>().SetFloatVariable("halu", 10);
+        //Fungus.FloatData.
     }
 
     public void rehabilitate()

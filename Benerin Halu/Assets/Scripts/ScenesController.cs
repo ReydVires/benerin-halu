@@ -37,4 +37,9 @@ public class ScenesController : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+
+    public void loadGameplayScene()
+    {
+        unPopUp();
+    }
 }

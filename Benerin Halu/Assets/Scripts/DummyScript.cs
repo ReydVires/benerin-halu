@@ -14,6 +14,11 @@ public class DummyScript : MonoBehaviour
 
     public Sprite[] potraits;
     public Transform[] spawnSpot;
+    public string[] messages= {
+        "blackhair", "blonde", "brownhair",
+        "hat", "hat2", "hatblue", "normal",
+        "pinky", "punk", "punk2", "redhair"
+    };
 
     private void Start()
     {
@@ -51,6 +56,6 @@ public class DummyScript : MonoBehaviour
             facing = 1;
         }
         int idxAnim = Random.Range(0, animatorControllers.Length);
-        deadEntity.Dequeue().GetComponent<Movements>().Initialize(facing, spawnSpot[idx].position, animatorControllers[idxAnim], potraits[idxAnim]);
+        deadEntity.Dequeue().GetComponent<Movements>().Initialize(facing, spawnSpot[idx].position, animatorControllers[idxAnim], potraits[idxAnim], messages[idxAnim]);
     }
 }
