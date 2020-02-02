@@ -11,7 +11,7 @@ public class CamMovement : MonoBehaviour
     private bool isFungusShows = false;
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

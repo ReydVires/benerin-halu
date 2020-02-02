@@ -24,7 +24,7 @@ public class PopUp : MonoBehaviour
         _people = peopleObject.GetComponent<People>();
         Debug.Log(message);
         Fungus.Flowchart.BroadcastFungusMessage(message);
-        FindObjectOfType<Fungus.Flowchart>().SetFloatVariable("halu", 10);
+        FindObjectOfType<Fungus.Flowchart>().SetFloatVariable("halu", _people.sanityMeter);
         //Fungus.FloatData.
     }
 

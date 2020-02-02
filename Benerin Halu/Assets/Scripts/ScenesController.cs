@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class ScenesController : MonoBehaviour
 {
 
-
     public void popUp()
     {
         EntitasDetail.inspectPopUp = true;
@@ -25,6 +24,7 @@ public class ScenesController : MonoBehaviour
     }
     public void unPopUp()
     {
+        HaluMeter.instance.addingScore(120);
         EntitasDetail.inspectPopUp = false;
         Time.timeScale = 1f;
         SceneManager.UnloadScene("Popup 1");
@@ -32,6 +32,15 @@ public class ScenesController : MonoBehaviour
     public void loadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void loadThisScene()
+    {
+        SceneManager.UnloadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void quitApp()
+    {
+        Application.Quit();
     }
     public void loadScene(int index)
     {

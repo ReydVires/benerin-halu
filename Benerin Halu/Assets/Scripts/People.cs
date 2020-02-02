@@ -142,6 +142,8 @@ public class People : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (HaluMeter.instance._isGameOver)
+            return;
         if (!EntitasDetail.inspectPopUp)
         {
             EntitasDetail.title = nama;
@@ -158,7 +160,7 @@ public class People : MonoBehaviour
     */
     public int definePeople()
     {
-        sanityMeter = Random.Range(10,10);
+        sanityMeter = Random.Range(0,5);
         if (sanityMeter < 5)
         {
             return 0;
@@ -232,10 +234,12 @@ public class People : MonoBehaviour
         if (isPositive)
         {
             _canMove = false;
+            HaluMeter.instance.addingScore(1225 - 125);
             animEff.SetFloat("feedback", 1f);
         }
         else
         {
+            HaluMeter.instance.addingScore(50 - 125);
             animEff.SetFloat("feedback", 0f);
         }
         StartCoroutine(DelayRehabilityEffect(0.7f, isPositive));

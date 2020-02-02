@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HaluMeter : MonoBehaviour
 {
+    public static HaluMeter instance;
     public static Queue<float> sanityPeople;
     [SerializeField]
     private Image bar;
@@ -22,13 +23,19 @@ public class HaluMeter : MonoBehaviour
     private float _timePlay;
 
     public Text textScore;
-    private float _score;
+    private long _score;
+
+    public bool _isGameOver;
+
+    public GameObject panelGameOver;
 
     private Color[] indicators ={new Color(0,255,0,255), new Color(236, 255, 0, 255), new Color(255, 0, 0, 255) };
 
     private void Awake()
     {
+        instance = this;
         sanityPeople = new Queue<float>();
+        _isGameOver = false;
     }
 
     void Start()
@@ -44,6 +51,12 @@ public class HaluMeter : MonoBehaviour
 
     void Update()
     {
+        if (_isGameOver)
+        {
+            Time.timeScale = 0;
+            panelGameOver.SetActive(true);
+            return;
+        }
         _timeHalu -= Time.deltaTime;
         _timePlay += Time.deltaTime;
         SetTimeText(Mathf.RoundToInt(_timePlay));
@@ -57,6 +70,7 @@ public class HaluMeter : MonoBehaviour
         _value = Mathf.Clamp(_value + sanityPeople.Dequeue(), 0, 300);
         _haluMeter.value = _value;
         ChangeColors(_value);
+        _isGameOver = (_value >= _maxHalu);
     }
 
     void ChangeColors(float val)
@@ -80,7 +94,7 @@ public class HaluMeter : MonoBehaviour
         sanityPeople.Enqueue(halu);
     }
 
-    public void addingScore(int point)
+    public void addingScore(long point)
     {
         _score += point;
         textScore.text = _score.ToString();
