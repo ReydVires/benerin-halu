@@ -7,8 +7,11 @@ public class People : MonoBehaviour
 {
     public string nama;
     public float speed;
+    public float delayLevelDown;
+    private float _delayLevelDown;
+    private float _delayAddHalu;
     public int emojiMeter; // Max is 7
-    public int sanityMeter;
+    public int sanityMeter; // max 10
     public Movements movements;
     public GameObject baloonPrefab;
     public GameObject baloonSelf;
@@ -26,7 +29,9 @@ public class People : MonoBehaviour
 
     void Start()
     {
-        emojiMeter = Random.Range(0, 6);
+        emojiMeter = definePeople();
+        _delayLevelDown = delayLevelDown;
+        _delayAddHalu = 5;
         pickedEmojis = new List<string>(); // di sini karena define emoji bakal dipanggil saat emoticon bertambah
         InitBaloonState();
         anim = GetComponentInChildren<Animator>();
@@ -35,17 +40,14 @@ public class People : MonoBehaviour
 
     void DefineEmoji()
     {
-        Debug.Log(pickedEmojis.Count);
+        
         while (pickedEmojis.Count != emojiMeter)
         {
             var pickEmo = Random.Range(0, emojis.Length - 1);
             if (!pickedEmojis.Contains(emojis[pickEmo]))
                 pickedEmojis.Add(emojis[pickEmo]);
         }
-        for (int i = 0; i < pickedEmojis.Count; i++)
-        {
-            Debug.Log(pickedEmojis[i] + " " + i);
-        }
+        
     }
     
     void InitBaloonState()
@@ -61,9 +63,10 @@ public class People : MonoBehaviour
         baloonSelf = Instantiate(baloonPrefab, baloonTransform);
         DefineEmoji();
 
-
+        baloonSelf.active = false;
         if (pickedEmojis.Count >= 1)
         {
+            baloonSelf.active= true;
             pickedEmojisIdx = 0;
             baloonSelf.GetComponent<Baloon>().SetSprite(pickedEmojis[pickedEmojisIdx]);
         }
@@ -89,6 +92,8 @@ public class People : MonoBehaviour
             movements.Move(speed);
             anim.SetFloat("XPos", movements.facing);
         }
+        levelDown();
+        HaluPeople();
     }
 
     
@@ -98,7 +103,7 @@ public class People : MonoBehaviour
             return;
         if (pickedEmojisIdx == pickedEmojis.Count-1)
         {
-            Debug.Log("Do Reset Baloon State");
+            
             pickedEmojisIdx = 0;
             /*
             for (int i = 0; i < emojiMeter; i++)
@@ -107,7 +112,7 @@ public class People : MonoBehaviour
             }
             */
         }
-        Debug.Log("Do Change Baloon");
+        
         baloonSelf.GetComponent<Baloon>().SetSprite(pickedEmojis[++pickedEmojisIdx]);
 
             /*
@@ -130,6 +135,7 @@ public class People : MonoBehaviour
         {
             EntitasDetail.title = nama;
             EntitasDetail.potrait = potrait;
+            EntitasDetail.go = gameObject;
             FindObjectOfType<ScenesController>().popUp();
 
         }
@@ -138,5 +144,60 @@ public class People : MonoBehaviour
     /*
         gameObject.GetComponentInParent<AudioSource>().PlayOneShot(emoji);
     */
-    
+    public int definePeople()
+    {
+        sanityMeter = Random.Range(10,10);
+        if (sanityMeter < 5)
+        {
+            return 0;
+        }else if (sanityMeter < 7)
+        {
+            return Random.Range(1, 3);
+        }else if (sanityMeter < 9)
+        {
+            return Random.Range(2, 5);
+        }
+        else
+        {
+            return Random.Range(3, 7);
+        }
+    }
+    public void levelDown()
+    {
+        delayLevelDown -= Time.deltaTime;
+        if (delayLevelDown <= 0)
+        {
+            delayLevelDown = _delayLevelDown;
+            sanityMeter += 1;
+            if (sanityMeter == 5 || sanityMeter == 7 || sanityMeter == 9)
+            {
+                baloonSelf.active = true;
+                emojiMeter += 2;
+                while (pickedEmojis.Count != emojiMeter)
+                {
+                    var pickEmo = Random.Range(0, emojis.Length - 1);
+                    if (!pickedEmojis.Contains(emojis[pickEmo]))
+                        pickedEmojis.Add(emojis[pickEmo]);
+                }
+            }
+        }
+    }
+
+    public void HaluPeople()
+    {
+        if (sanityMeter <= 10)
+            return;
+        _delayAddHalu -= Time.deltaTime;
+        if(_delayAddHalu < 0)
+        {
+            _delayAddHalu = 5;
+            HaluMeter.AddingHaluMeter(10);
+        }
+    }
+
+    public void BackToPoll()
+    {
+        DummyScript.deadEntity.Enqueue(gameObject);
+        gameObject.SetActive(false);
+    }
 }

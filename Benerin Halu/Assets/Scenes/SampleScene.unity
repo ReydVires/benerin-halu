@@ -257,6 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -995,6 +997,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 10
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 10
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -2266,6 +2270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -2574,6 +2580,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
         type: 3}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: delayLevelDown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199495205933033373, guid: 380d3e3587a2fc741afccf870b0d5557,
+        type: 3}
+      propertyPath: delayAddHalu
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380d3e3587a2fc741afccf870b0d5557, type: 3}
 --- !u!1 &913073707
@@ -2631,6 +2647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -2783,6 +2801,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -3030,6 +3050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -3686,6 +3708,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -4542,6 +4566,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -4842,6 +4868,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -4996,6 +5024,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}
@@ -5908,6 +5938,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 0
+  delayLevelDown: 3
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 0}
   baloonPrefab: {fileID: 0}

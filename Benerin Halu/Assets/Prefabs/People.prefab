@@ -83,11 +83,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: 
   speed: 2
+  delayLevelDown: 5
+  emojiMeter: 0
   sanityMeter: 0
   movements: {fileID: 2726789129126149525}
   baloonPrefab: {fileID: 2635598726172095362, guid: c11f8c4d1b169434cb2ceb3388e2afd0,
     type: 3}
+  baloonSelf: {fileID: 0}
   baloonTransDelay: 20
+  potrait: {fileID: 0}
+  emoji: {fileID: 0}
 --- !u!114 &2726789129126149525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +119,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.12044603}
-  m_Size: {x: 0.1, y: 0.25910795}
+  m_Offset: {x: -0.003596425, y: 0.122603744}
+  m_Size: {x: 0.19926095, y: 0.31808907}
   m_Direction: 0
 --- !u!1 &1092768111946633854
 GameObject:

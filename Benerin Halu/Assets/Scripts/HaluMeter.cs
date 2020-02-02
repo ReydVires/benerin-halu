@@ -50,11 +50,11 @@ public class HaluMeter : MonoBehaviour
         if(_timeHalu <= 0)
         {
             _timeHalu = timeHalu;
-            AddingHaluMeter(_addingHalu);
+            //AddingHaluMeter(_addingHalu);
         }
         if (sanityPeople.Count == 0)
             return;
-        _value = _value + sanityPeople.Dequeue();
+        _value = Mathf.Clamp(_value + sanityPeople.Dequeue(), 0, 300);
         _haluMeter.value = _value;
         ChangeColors(_value);
     }

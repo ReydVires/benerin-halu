@@ -23,7 +23,6 @@ public class Baloon : MonoBehaviour
     public void SetSprite(string name)
     {
         _sprite = Resources.Load<Sprite>("emo" + name);
-        Debug.Log("Set baloon sprite: " + _sprite.name);
         ApplySprite();
     }
 }

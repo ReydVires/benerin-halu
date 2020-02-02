@@ -7,8 +7,8 @@ public class Movements : MonoBehaviour
     float random = 0;
     public float facing = 1f;
     float accel = 1f;
-    float minAccel = 0.5f;
-    float maxAccel = 1.5f;
+    float minAccel = 0.2f;
+    float maxAccel = 1.0f;
     float minTreshold = 30f;
     float maxThreshold = 50f;
     Rigidbody2D myRigidBody;
