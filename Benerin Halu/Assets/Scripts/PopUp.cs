@@ -9,12 +9,15 @@ public class PopUp : MonoBehaviour
     public GameObject panelImage;
     public GameObject peopleObject;
     private People _people;
+    public AudioSource sfx;
+    public AudioClip berhasil;
+    public AudioClip failed;
 
     public string message;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sfx = GetComponent<AudioSource>();
         //text = GetComponent<Text>();
         //text.text = EntitasDetail.title;
         potrait = EntitasDetail.potrait;
@@ -34,10 +37,12 @@ public class PopUp : MonoBehaviour
         if (isRehabilitated)
         {
             HaluMeter.AddingHaluMeter(-15);
+            sfx.PlayOneShot(berhasil);
             //DelayAddHaluMeter(0.5f, -15);
         }
         else
         {
+            sfx.PlayOneShot(failed);
             HaluMeter.AddingHaluMeter(5);
             //DelayAddHaluMeter(0.5f, 5);
         }

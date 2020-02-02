@@ -20,10 +20,10 @@ public class HaluMeter : MonoBehaviour
     private float _maxHalu;
 
     public Text textTime;
-    private float _timePlay;
+    public float _timePlay;
 
     public Text textScore;
-    private long _score;
+    public long _score;
 
     public bool _isGameOver;
 

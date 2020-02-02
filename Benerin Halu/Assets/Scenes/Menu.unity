@@ -209,6 +209,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creditPanel: {fileID: 74301486}
+--- !u!1 &275690571
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275690573}
+  - component: {fileID: 275690572}
+  m_Layer: 0
+  m_Name: _FungusState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &275690572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275690571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedFlowchart: {fileID: 0}
+--- !u!4 &275690573
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275690571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &363847262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,9 +1347,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Programmer : \n\tMuh. Haydar\n\tA. Arsyel\n\tAnas\n\nDesigner :\n\tDede
-    Mastra\n\nArts : \n\tWitsqadianto\n\tImanda S.\n\nSound Engineer :\n\tImanda
-    S\n\nCredit to:\n\tOtologic\n\tVexedEnigma\n\nPowered by :\n\tUnity\n\tGGJ 2020\n\n\n"
+  m_Text: "Programmer : \n\tMuh. Haydar\n\tA. Arsyel\n\tAnas\n\tImanda S\n\nDesigner
+    :\n\tDede Mastra\n\nArts : \n\tWitsqadianto\n\tImanda S.\n\nCredit to:\n\tOtologic\n\tVexedEnigma\n\nPowered
+    by :\n\tUnity\n\tGGJ 2020\n\n\n"
 --- !u!222 &1832680049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1605,6 +1649,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: cd6ca31539fe32c4b99cdb465db9ec35,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 907996156}
+        m_MethodName: quitApp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

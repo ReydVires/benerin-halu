@@ -12,14 +12,15 @@ public class Game_Over : MonoBehaviour
     public Text time;
     void Start()
     {
-        score = GetComponent<Text>();
-        time = GetComponent<Text>();
-        string x = HaluMeter.instance.textScore.text;
-        if (HaluMeter.instance.textScore.text == null)
-            Debug.Log("a");
-        score.text = x;
-        time.text = HaluMeter.instance.textTime.text;
+        score.text = HaluMeter.instance._score.ToString();
+        time.text = HaluMeter.instance._timePlay.ToString();
     }
 
-    
+    private void Update()
+    {
+        score.text = HaluMeter.instance._score.ToString();
+        time.text = HaluMeter.instance._timePlay.ToString();
+    }
+
+
 }

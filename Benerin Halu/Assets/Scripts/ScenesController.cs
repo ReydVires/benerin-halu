@@ -35,7 +35,8 @@ public class ScenesController : MonoBehaviour
     }
     public void loadThisScene()
     {
-        SceneManager.UnloadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+        //SceneManager.UnloadScene(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void quitApp()

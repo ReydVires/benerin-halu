@@ -22,6 +22,7 @@ public class DummyScript : MonoBehaviour
 
     private void Start()
     {
+        deadEntity = new Queue<GameObject>();
         for (int i = 0; i < 17; i++)
         {
             if (player.transform.GetChild(i).gameObject.activeSelf != true)
