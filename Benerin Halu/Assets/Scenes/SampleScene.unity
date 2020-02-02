@@ -265,6 +265,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &19629696
 Animator:
@@ -1005,6 +1006,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!50 &172445768
 Rigidbody2D:
@@ -2268,6 +2270,18 @@ MonoBehaviour:
   - {fileID: 583890311}
   - {fileID: 1041534778}
   - {fileID: 1805254629}
+  messages:
+  - blackhair
+  - blonde
+  - brownhair
+  - hat
+  - hat2
+  - hatblue
+  - normal
+  - pinky
+  - punk
+  - punk2
+  - redhair
 --- !u!4 &819757198
 Transform:
   m_ObjectHideFlags: 0
@@ -2355,6 +2369,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &848934551
 Animator:
@@ -2737,6 +2752,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &913073710
 Animator:
@@ -2891,6 +2907,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &962301613
 Animator:
@@ -3053,7 +3070,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_TargetDisplay: 0
 --- !u!224 &968895415
 RectTransform:
@@ -3142,6 +3159,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &1008878171
 Animator:
@@ -3800,6 +3818,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!212 &1297887577
 SpriteRenderer:
@@ -4658,6 +4677,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &1599645602
 Animator:
@@ -5037,6 +5057,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!50 &1748996085
 Rigidbody2D:
@@ -5193,6 +5214,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &1786351622
 Animator:
@@ -6107,6 +6129,7 @@ MonoBehaviour:
   baloonSelf: {fileID: 0}
   baloonTransDelay: 0
   potrait: {fileID: 0}
+  message: 
   emoji: {fileID: 0}
 --- !u!95 &2010636266
 Animator:
